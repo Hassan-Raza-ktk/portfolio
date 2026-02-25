@@ -1,0 +1,432 @@
+/* ================================
+   Hassan Raza Portfolio - Pro CSS
+   Author: You 😄
+================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+  --bg:#0b1020;
+  --bg2:#0f1730;
+  --card:#121b36;
+  --card2:#0f1833;
+  --text:#eaf0ff;
+  --muted:#a9b4d0;
+  --line:rgba(255,255,255,0.08);
+
+  --accent:#7c5cff;
+  --accent2:#30c6ff;
+
+  --success:#22c55e;
+  --warn:#f59e0b;
+  --info:#38bdf8;
+  --danger:#ef4444;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Poppins',sans-serif;
+  background: radial-gradient(1200px 700px at 10% 10%, rgba(124,92,255,0.25), transparent 60%),
+              radial-gradient(1200px 700px at 90% 20%, rgba(48,198,255,0.20), transparent 55%),
+              linear-gradient(180deg, var(--bg), var(--bg2));
+  color:var(--text);
+  line-height:1.7;
+}
+
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+
+.container{
+  width:min(1150px, 92%);
+  margin:0 auto;
+}
+
+/* ================= HEADER ================= */
+.header{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:rgba(11,16,32,0.65);
+  backdrop-filter: blur(14px);
+  border-bottom:1px solid var(--line);
+}
+
+.header .container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 0;
+}
+
+.logo{
+  font-weight:700;
+  font-size:20px;
+  letter-spacing:0.5px;
+}
+
+.logo span{
+  color: var(--accent2);
+}
+
+nav ul{
+  display:flex;
+  gap:22px;
+  align-items:center;
+}
+
+nav a{
+  font-weight:500;
+  color:var(--muted);
+  padding:8px 10px;
+  border-radius:10px;
+  transition: 0.25s ease;
+}
+nav a:hover{
+  color:var(--text);
+  background:rgba(255,255,255,0.06);
+}
+
+/* ================= HERO ================= */
+.hero{
+  padding:70px 0 40px;
+}
+
+.hero-content{
+  display:grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap:40px;
+  align-items:center;
+}
+
+.hero h1{
+  font-size:48px;
+  line-height:1.15;
+  letter-spacing:-0.5px;
+}
+
+.hero h1 span{
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.subtitle{
+  margin-top:14px;
+  color:var(--muted);
+  font-weight:600;
+}
+
+.hero p{
+  margin-top:10px;
+  color:var(--muted);
+  max-width:52ch;
+}
+
+.buttons{
+  display:flex;
+  gap:12px;
+  margin-top:22px;
+  flex-wrap:wrap;
+}
+
+.btn,
+.btn-outline{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 16px;
+  border-radius:14px;
+  font-weight:600;
+  transition: 0.25s ease;
+  border:1px solid transparent;
+}
+
+.btn{
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  color:#081022;
+  box-shadow: 0 18px 40px rgba(124,92,255,0.20);
+}
+.btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 22px 55px rgba(48,198,255,0.18);
+}
+
+.btn-outline{
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.10);
+  color: var(--text);
+}
+.btn-outline:hover{
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-2px);
+}
+
+.hero-img{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
+
+.profile-pic{
+  width:100%;
+  max-width:420px;        /* image ka ideal size */
+  height:auto;            /* stretch prevent karega */
+  border-radius:30px;     /* smooth rounded corner */
+  object-fit:cover;
+  border:1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  transition:0.3s ease;
+}
+
+/* subtle glow background */
+.hero-img::before{
+  content:"";
+  position:absolute;
+  width:460px;
+  height:460px;
+  background: radial-gradient(circle at center,
+              rgba(124,92,255,0.35),
+              rgba(48,198,255,0.25),
+              transparent 70%);
+  filter: blur(40px);
+  z-index:-1;
+}
+
+/* ================= SECTIONS ================= */
+.section-title{
+  text-align:center;
+  margin:30px 0 22px;
+}
+.section-title h2{
+  font-size:32px;
+  letter-spacing:-0.4px;
+}
+.section-title p{
+  color:var(--muted);
+  margin-top:8px;
+}
+
+.case-study{
+  padding:40px 0 70px;
+}
+
+/* ================= PROJECT GRID ================= */
+.case-grid{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:18px;
+  margin-top:22px;
+}
+
+.case-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  border:1px solid rgba(255,255,255,0.10);
+  border-radius:20px;
+  overflow:hidden;
+  transition: 0.25s ease;
+  box-shadow: 0 20px 70px rgba(0,0,0,0.35);
+}
+.case-card:hover{
+  transform: translateY(-4px);
+  border-color: rgba(124,92,255,0.35);
+}
+
+.case-img{
+  position:relative;
+  height:200px;
+  overflow:hidden;
+  background: rgba(0,0,0,0.2);
+}
+.case-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform: scale(1.02);
+  transition:0.35s ease;
+}
+.case-card:hover .case-img img{
+  transform: scale(1.08);
+}
+
+.badge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  padding:7px 10px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.2px;
+  border:1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(10px);
+}
+
+.badge.live{ color:#06130a; background: rgba(34,197,94,0.85); border-color: rgba(34,197,94,0.9); }
+.badge.delivered{ color:#07111a; background: rgba(56,189,248,0.85); border-color: rgba(56,189,248,0.9); }
+.badge.progress{ color:#1a1206; background: rgba(245,158,11,0.9); border-color: rgba(245,158,11,0.95); }
+
+.case-info{
+  padding:16px 16px 18px;
+}
+.case-info h4{
+  font-size:18px;
+  margin-bottom:6px;
+}
+.case-info p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.tech-stack{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:12px 0 12px;
+}
+.tech-stack span{
+  font-size:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color:var(--text);
+}
+
+.project-link{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-weight:700;
+  margin-top:4px;
+  color:var(--accent2);
+}
+.project-link:hover{ text-decoration:underline; }
+
+.project-link.grey{
+  color: rgba(255,255,255,0.45);
+  font-weight:600;
+  cursor:default;
+}
+
+/* ================= EXPERIENCE ================= */
+.experience{
+  padding:55px 0 60px;
+  border-top:1px solid var(--line);
+}
+
+.experience h2{
+  text-align:center;
+  font-size:30px;
+}
+
+.timeline{
+  margin-top:24px;
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:16px;
+}
+
+.job{
+  padding:18px;
+  border-radius:18px;
+  background: rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.10);
+}
+.job h4{
+  font-size:18px;
+  margin-bottom:6px;
+}
+.job p{
+  color:var(--muted);
+  font-size:14px;
+}
+.job a{
+  display:inline-block;
+  margin-top:10px;
+  font-weight:700;
+  color:var(--accent2);
+}
+.job a:hover{ text-decoration:underline; }
+
+/* ================= FOOTER ================= */
+.footer{
+  padding:55px 0 40px;
+  border-top:1px solid var(--line);
+  background: rgba(0,0,0,0.15);
+}
+
+.footer h2{
+  text-align:center;
+  font-size:30px;
+}
+
+.contact-grid{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:12px;
+  justify-items:center;
+  text-align:center;
+}
+
+.contact-item{
+  color:var(--muted);
+  display:flex;
+  gap:10px;
+  align-items:center;
+  font-weight:500;
+}
+
+.social-links{
+  display:flex;
+  gap:12px;
+  margin-top:8px;
+}
+
+.social-links a{
+  width:44px;height:44px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  transition:0.25s ease;
+}
+.social-links a:hover{
+  transform: translateY(-2px);
+  border-color: rgba(48,198,255,0.45);
+  background: rgba(48,198,255,0.10);
+}
+
+.copyright{
+  margin-top:22px;
+  text-align:center;
+  color:rgba(255,255,255,0.45);
+  font-size:13px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px){
+  .hero-content{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .hero p{ margin-left:auto; margin-right:auto; }
+  .buttons{ justify-content:center; }
+  .profile-pic{ width:240px;height:240px; }
+  .case-grid{ grid-template-columns: 1fr; }
+  .timeline{ grid-template-columns: 1fr; }
+  nav ul{ gap:10px; }
+  nav a{ padding:8px 8px; }
+}
+
+@media (max-width: 520px){
+  .hero h1{ font-size:36px; }
+  .logo{ font-size:18px; }
+  .case-img{ height:180px; }
+}
