@@ -477,17 +477,21 @@ nav a:hover {
   font-size: 13px;
 }
 
-/* ================= MODERN RESPONSIVE BREAKPOINTS ================= */
+/* ================= UPDATED RESPONSIVE BREAKPOINTS (IMAGE FIXED) ================= */
 @media (max-width: 1024px) {
   .case-grid {
-    grid-template-columns: repeat(2, 1fr); /* Balanced 2 Columns for Large Tablets */
+    grid-template-columns: repeat(2, 1fr); /* Tablets pe 2 columns */
   }
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding: 40px 0 30px;
+  }
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 30px;
   }
   .hero p {
     margin-left: auto;
@@ -496,13 +500,26 @@ nav a:hover {
   .buttons {
     justify-content: center;
   }
+  
+  /* Profile Picture Perfect Mobile Fix */
   .profile-pic {
-    width: 240px;
-    height: 240px;
+    width: 90%;
+    max-width: 280px;      /* Mobile par ideal responsive size */
+    height: auto;          /* Height auto rakhne se stretch nahi hogi */
+    aspect-ratio: 1 / 1;   /* Perfect professional square ratio */
+    object-fit: cover;     /* Face automatically center me fit ho jayega */
     margin: 0 auto;
+    border-radius: 24px;   /* Neat corners */
   }
+  
+  .hero-img::before {
+    width: 280px;
+    height: 280px;         /* Glow shadow size inside mobile */
+  }
+
   .case-grid {
-    grid-template-columns: 1fr; /* Clean Single Column for Mobiles */
+    grid-template-columns: 1fr; /* Mobile pe clean 1 column layout */
+    gap: 24px;
   }
   .timeline {
     grid-template-columns: 1fr;
@@ -517,7 +534,7 @@ nav a:hover {
 
 @media (max-width: 520px) {
   .hero h1 {
-    font-size: 32px;
+    font-size: 30px;       /* Multi-line adjustment for small screens */
   }
   .logo {
     font-size: 18px;
@@ -526,3 +543,24 @@ nav a:hover {
     height: 180px;
   }
 }
+
+/* Profile Picture Perfect Mobile Fix - Forced Specificity */
+  .hero-img img, 
+  .profile-pic {
+    width: 100% !important;
+    max-width: 290px !important;    /* Size responsive and neat */
+    height: 290px !important;       /* Strict square taake height dabbe na */
+    object-fit: cover !important;    /* Image bina distort hue crop hogi */
+    object-position: center top !important; /* Face bilkul center me focus rahega */
+    border-radius: 24px !important; /* Corners smooth */
+    margin: 0 auto !important;
+    display: block !important;
+  }
+  
+  /* Agar image ke peeche koi dynamic shadow box hai to usko bhi auto square karein */
+  .hero-img::before {
+    width: 290px !important;
+    height: 290px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
