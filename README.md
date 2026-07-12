@@ -1,4 +1,4 @@
-# Hassan Raza Portfolio
+# Hassan Raza Khattak Portfolio
 
 A responsive personal portfolio website for Hassan Raza, showcasing AI engineering, data science, desktop ERP, and web development projects.
 
